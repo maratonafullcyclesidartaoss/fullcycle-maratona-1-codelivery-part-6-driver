@@ -20,10 +20,6 @@
 									"script": {
 										"exec": [
 											"// Validate status 2xx ",
-											"pm.test(\"[GET]::/drivers - Status code is 2xx\", function () {",
-											"   pm.response.to.be.success;",
-											"});",
-											"",
 											"pm.test(\"[GET]::/drivers - Status code is 200 OK\", () => {",
 											"  pm.response.to.have.status(200);",
 											"});",
@@ -38,9 +34,12 @@
 											"    pm.response.to.have.jsonBody();",
 											"});",
 											"",
-											"pm.test(\"[GET]::/drivers - Response data type is an array\", () => {",
-											"  const jsonData = pm.response.json();",
-											"  pm.expect(jsonData.Drivers).to.be.an(\"array\");",
+											"// Response Validation",
+											"const schema = {\"title\":\"Root Type for driver retrieved\",\"description\":\"When driver was retrieved successfully\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"example\":{\"uuid\":\"d452b08c-269b-434b-b079-06a89411b98d\",\"name\":\"Sidarta S\"}}",
+											"",
+											"// Validate if response matches JSON schema ",
+											"pm.test(\"[GET]::/drivers - Schema is valid\", function() {",
+											"    pm.response.to.have.jsonSchema(schema,{unknownFormats: [\"string\", \"string\"]});",
 											"});"
 										],
 										"type": "text/javascript"
