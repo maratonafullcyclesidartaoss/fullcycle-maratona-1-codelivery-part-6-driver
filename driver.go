@@ -132,4 +132,5 @@ func main() {
 	r.Get("/docs/*", httpSwagger.Handler(httpSwagger.URL(u)))
 
 	http.ListenAndServe(":8081", r)
+
 }
