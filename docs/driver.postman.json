@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "96e51d0e-8180-499e-acb3-cf2c0fa7deb1",
 		"name": "Driver - Driver API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3815935"
 	},
 	"item": [
@@ -35,7 +35,7 @@
 											"});",
 											"",
 											"const jsonData = pm.response.json();",
-											"pm.test(\"Test data type of the response\", () => {",
+											"pm.test(\"[GET]::/drivers - Response data type is an array\", () => {",
 											"  pm.expect(jsonData.Drivers).to.be.an(\"array\");",
 											"});"
 										],
@@ -46,7 +46,15 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{driver-Url}}/drivers"
+								"url": {
+									"raw": "{{driver-Url}}/drivers",
+									"host": [
+										"{{driver-Url}}"
+									],
+									"path": [
+										"drivers"
+									]
+								}
 							},
 							"response": [
 								{
@@ -54,7 +62,15 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": "{{driver-Url}}/drivers"
+										"url": {
+											"raw": "{{driver-Url}}/drivers",
+											"host": [
+												"{{driver-Url}}"
+											],
+											"path": [
+												"drivers"
+											]
+										}
 									},
 									"_postman_previewlanguage": null,
 									"header": [
@@ -66,7 +82,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "\n  \"Drivers\": [\n    {\n      \"uuid\": \"45688cd6-7a27-4a7b-89c5-a9b604eefe2f\",\n      \"name\": \"Wesley W\"\n    },\n    {\n      \"uuid\": \"9a118e4d-821a-44c7-accc-fa99ac4be01a\",\n      \"name\": \"Luiz\"\n    }\n  ]\n}"
+									"body": "{\n  \"Drivers\": [\n    {\n      \"uuid\": \"45688cd6-7a27-4a7b-89c5-a9b604eefe2f\",\n      \"name\": \"Wesley W\"\n    },\n    {\n      \"uuid\": \"9a118e4d-821a-44c7-accc-fa99ac4be01a\",\n      \"name\": \"Luiz\"\n    }\n  ]\n}"
 								}
 							]
 						}
