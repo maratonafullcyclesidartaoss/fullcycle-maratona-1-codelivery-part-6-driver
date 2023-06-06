@@ -1,4 +1,4 @@
-# Maratona Full Cycle - Codelivery - Part V - Driver - CI/CD
+# Maratona Full Cycle - Codelivery - Part 6 - Driver - Observabilidade
 
 O projeto consiste em:
 
@@ -32,9 +32,4 @@ Dinâmica do sistema:
 
 Nesta quinta versão, trabalhamos com tecnologias relacionadas à observabilidade.
 
-
-
-
-
 #### Referências
-
