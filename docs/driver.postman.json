@@ -35,11 +35,11 @@
 											"});",
 											"",
 											"// Response Validation",
-											"const schema = {\"title\":\"Root Type for driver retrieved\",\"description\":\"When driver was retrieved successfully\",\"type\":\"object\",\"properties\":{\"uuid\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"example\":{\"uuid\":\"d452b08c-269b-434b-b079-06a89411b98d\",\"name\":\"Sidarta S\"}}",
+											"const schema = {\"type\":\"array\",\"items\": [{\"type\": \"object\", \"properties\": {\"uuid\": {\"type\": \"string\"}, \"name\": {\"type\": \"string\"}}}]};",
 											"",
 											"// Validate if response matches JSON schema ",
 											"pm.test(\"[GET]::/drivers - Schema is valid\", function() {",
-											"    pm.response.to.have.jsonSchema(schema,{unknownFormats: [\"string\", \"string\"]});",
+											"    pm.response.to.have.jsonSchema(schema);",
 											"});"
 										],
 										"type": "text/javascript"
