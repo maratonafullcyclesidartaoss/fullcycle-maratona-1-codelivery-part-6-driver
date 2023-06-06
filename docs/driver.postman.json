@@ -35,7 +35,7 @@
 											"});",
 											"",
 											"// Response Validation",
-											"const schema = {\"type\":\"array\",\"items\": [{\"type\": \"object\", \"properties\": {\"uuid\": {\"type\": \"string\"}, \"name\": {\"type\": \"string\"}}}]};",
+											"const schema = {\"type\":\"array\",\"items\": [{\"type\": \"object\", \"properties\": {\"uuid\": {\"type\": \"int64\"}, \"name\": {\"type\": \"string\"}}}]};",
 											"",
 											"// Validate if response matches JSON schema ",
 											"pm.test(\"[GET]::/drivers - Schema is valid\", function() {",
