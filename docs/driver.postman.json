@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "96e51d0e-8180-499e-acb3-cf2c0fa7deb1",
 		"name": "Driver - Driver API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "3815935"
 	},
 	"item": [
@@ -46,15 +46,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{driver-Url}}/drivers",
-									"host": [
-										"{{driver-Url}}"
-									],
-									"path": [
-										"drivers"
-									]
-								}
+								"url": "{{driver-Url}}/drivers"
 							},
 							"response": [
 								{
@@ -62,16 +54,10 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{driver-Url}}/drivers",
-											"host": [
-												"{{driver-Url}}"
-											],
-											"path": [
-												"drivers"
-											]
-										}
+										"url": "http://127.0.0.1:4010/drivers"
 									},
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": null,
 									"header": [
 										{
@@ -82,7 +68,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"Drivers\": [\n    {\n      \"uuid\": \"45688cd6-7a27-4a7b-89c5-a9b604eefe2f\",\n      \"name\": \"Wesley W\"\n    },\n    {\n      \"uuid\": \"9a118e4d-821a-44c7-accc-fa99ac4be01a\",\n      \"name\": \"Luiz\"\n    }\n  ]\n}"
+									"body": "{\n   \"Drivers\":[\n      {\n         \"uuid\":\"362ad018-0170-474b-9e15-5d44957cfd94\",\n         \"name\":\"Sidarta S\"\n      }\n   ]\n}"
 								}
 							]
 						}
