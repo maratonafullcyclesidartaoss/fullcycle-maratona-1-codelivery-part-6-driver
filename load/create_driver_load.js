@@ -9,9 +9,9 @@ const PASS = "maria";
 export const options = {
   stages: [
     { target: 0, duration: "10s" },
-    { target: 5, duration: "60s" },
-    { target: 5, duration: "60s" },
-    { target: 5, duration: "180s" },
+    { target: 50, duration: "60s" },
+    { target: 100, duration: "60s" },
+    { target: 200, duration: "180s" },
   ],
 };
 
