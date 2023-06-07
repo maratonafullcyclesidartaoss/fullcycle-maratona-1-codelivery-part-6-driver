@@ -12,7 +12,6 @@ spec:
     repoURL: https://github.com/maratonafullcyclesidartaoss/fullcycle-maratona-1-codelivery-part-6-driver.git
     targetRevision: HEAD
     kustomize:
-      version: v3.6.1
   destination:
     namespace: driver
     server: https://kubernetes.default.svc
