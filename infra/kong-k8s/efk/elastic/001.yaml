@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pvc-e2898e91-4a91-47e2-a70e-498d176af615
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard-rwo
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: elasticsearch-master-elasticsearch-master-0
+    namespace: logs
+  gcePersistentDisk:
+    pdName: gke-pv
+    fsType: ext4

@@ -24,7 +24,7 @@ function authenticateUsingKeycloak(clientId, clientSecret, username, pass) {
     client_secret: clientSecret,
     scope: "openid",
   };
-  const headers = { "Content-Type": "application/json" };
+  const headers = { "Content-Type": "application/x-www-form-urlencoded" };
   const response = http.post(
     "http://keycloak.iam/realms/driver/protocol/openid-connect/token",
     formData,
