@@ -1,9 +1,9 @@
-FROM kong:2.8.1-alpine
+FROM kong:3.0.2-alpine
 USER root
 ENV PACKAGES="openssl-devel kernel-headers gcc git openssh" \
     LUA_BASE_DIR="/usr/local/share/lua/5.1" \
     KONG_PLUGIN_OIDC_VER="1.2.4-4" \
-    KONG_PLUGIN_COOKIES_TO_HEADERS_VER="1.1-1" \
+    # KONG_PLUGIN_COOKIES_TO_HEADERS_VER="1.1-4" \
     LUA_RESTY_OIDC_VER="1.7.5-1" \
     NGX_DISTRIBUTED_SHM_VER="1.0.7"
 
@@ -28,7 +28,7 @@ RUN set -ex \
     && luarocks build kong-oidc-${KONG_PLUGIN_OIDC_VER}.rockspec \
     # Build kong-plugin-cookies-to-headers
     && curl -sL https://raw.githubusercontent.com/revomatico/kong-plugin-cookies-to-headers/master/kong-plugin-cookies-to-headers-${KONG_PLUGIN_COOKIES_TO_HEADERS_VER}.rockspec > kong-plugin-cookies-to-headers-${KONG_PLUGIN_COOKIES_TO_HEADERS_VER}.rockspec \
-    && luarocks build kong-plugin-cookies-to-headers-${KONG_PLUGIN_COOKIES_TO_HEADERS_VER}.rockspec \
+    # && luarocks build kong-plugin-cookies-to-headers-${KONG_PLUGIN_COOKIES_TO_HEADERS_VER}.rockspec \
     # Patch nginx_kong.lua for kong-oidc session_secret
     && TPL=${LUA_BASE_DIR}/kong/templates/nginx_kong.lua \
     # May cause side effects when using another nginx under this kong, unless set to the same value
