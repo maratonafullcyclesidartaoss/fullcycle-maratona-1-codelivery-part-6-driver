@@ -7,3 +7,7 @@ route:
   strip_path: true
 upstream:
   host_header: driver.driver.svc
+proxy:
+  connect_timeout: 2000
+  read_timeout: 2000
+  write_timeout: 2000
